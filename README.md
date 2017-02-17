@@ -19,10 +19,31 @@ $ npm install ng2-gridstack
 ```
 ##Basic Usage
 
+Using SystemJs :
+
+````js
+System.config({
+    paths: {
+        (...)
+    },
+    map: {
+        'ng2-gridstack': 'npm:ng2-gridstack',
+		(...)
+    },
+    packages: {
+        app: {
+        'ng2-gridstack': {
+            main: './ng2-gridstack.js',
+            defaultExtension: 'js'
+        },
+		(...)
+    }
+```
+
 Import the component in your module
 
 ```ts
-import { GridStackComponent, GridStackItemDirective } from 'ng2-gridstack/ng2-gridstack'
+import { GridStackComponent, GridStackItemDirective } from 'ng2-gridstack'
 (...)
 
 @NgModule({
