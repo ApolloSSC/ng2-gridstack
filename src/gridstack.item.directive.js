@@ -85,3 +85,4 @@ GridStackItemDirective = __decorate([
         core_1.Renderer])
 ], GridStackItemDirective);
 exports.GridStackItemDirective = GridStackItemDirective;
+//# sourceMappingURL=gridstack.item.directive.js.map
