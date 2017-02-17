@@ -1,6 +1,6 @@
 {
   "name": "ng2-gridstack",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A gridstack component for Angular2",
   "main": "index.js",
   "scripts": {

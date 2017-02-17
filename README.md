@@ -42,6 +42,7 @@ export class YourModule { }
 ```
 
 [ng2-gridstack](https://github.com/troolee/ng2-gridstack) can be used in two ways, either by letting the component add the items for you, or by building your own items.
+
 ####First mode
 ```html
 <gridStack w="12" animate="true" 
