@@ -27,7 +27,9 @@ var GridStackItemDirective = (function () {
         renderer.setElementAttribute(nativeElement, "data-gs-y", String(this.y));
         renderer.setElementAttribute(nativeElement, "data-gs-width", String(this.w));
         renderer.setElementAttribute(nativeElement, "data-gs-height", String(this.h));
-        renderer.setElementAttribute(nativeElement, "data-custom-id", String(this.customid));
+        if (this.customid) {
+            renderer.setElementAttribute(nativeElement, "data-custom-id", String(this.customid));
+        }
         if (this.minWidth) {
             renderer.setElementAttribute(nativeElement, "data-gs-min-width", String(this.minWidth));
         }

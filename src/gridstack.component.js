@@ -24,11 +24,7 @@ var GridStackComponent = (function () {
     }
     GridStackComponent.prototype.ngAfterViewInit = function () {
         var nativeElement = this.el.nativeElement;
-        var options = {
-            cellHeight: 80,
-            verticalMargin: 10
-        };
-        $(nativeElement).find(".grid-stack").gridstack(options);
+        $(nativeElement).find(".grid-stack").gridstack(this.options);
     };
     GridStackComponent.prototype.onItemClick = function () {
         var grid = $('.grid-stack').data('gridstack');
@@ -79,7 +75,7 @@ var GridStackComponent = (function () {
                 el = $(el);
                 var node = el.data('_gridstack_node');
                 return {
-                    id: el.attr('data-custom-id'),
+                    customid: el.attr('data-custom-id'),
                     x: node.x,
                     y: node.y,
                     width: node.width,
@@ -108,6 +104,10 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", Boolean)
 ], GridStackComponent.prototype, "allowEditing", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], GridStackComponent.prototype, "options", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)

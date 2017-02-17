@@ -14,3 +14,5 @@ Properties
 *.config
 *.csproj
 *.user
+
+gulpfile.js
