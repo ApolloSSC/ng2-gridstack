@@ -1,20 +1,22 @@
 {
   "name": "ng2-gridstack",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A gridstack component for Angular2",
   "main": "index.js",
   "scripts": {
     "prepublish": "tsc"
   },
   "author": "Guillaume Perouffe <g.perouffe@gmail.com>",
+  "url":  "https://github.com/ApolloSSC/ng2-gridstack",
   "license": "ISC",
   "dependencies": {
     "@angular/core": "^2.4.7",
-    "@types/node": "^7.0.5",
-    "rxjs": "^5.1.1",
-    "zone.js": "^0.7.7"
+    "gridstack": "^0.2.6"
   },
   "devDependencies": {
+    "@types/node": "^7.0.5",
+    "rxjs": "^5.1.1",
+    "zone.js": "^0.7.7",
     "@types/core-js": "^0.9.35",
     "gulp": "^3.9.1",
     "typescript": "^2.1.6",
