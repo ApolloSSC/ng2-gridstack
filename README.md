@@ -7,7 +7,7 @@ Usage
 =====
 ##Requirements
 
-* [gridstack.js](https://github.com/troolee/gridstack.js#usage) and its requirements
+* [gridstack.js](https://github.com/troolee/gridstack.js#usage)
 * [@angular/core](https://www.npmjs.com/package/@angular/core)
 
 ##Install
