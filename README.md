@@ -21,7 +21,7 @@ $ npm install ng2-gridstack
 
 Using SystemJs :
 
-````js
+```js
 System.config({
     paths: {
         (...)
