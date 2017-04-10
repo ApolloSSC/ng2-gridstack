@@ -137,4 +137,3 @@ GridStackComponent = __decorate([
         core_1.Renderer])
 ], GridStackComponent);
 exports.GridStackComponent = GridStackComponent;
-//# sourceMappingURL=gridstack.component.js.map

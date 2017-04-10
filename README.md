@@ -5,19 +5,19 @@ A gridstack component for Angular2. Based on [gridstack.js](https://github.com/t
 
 Usage
 =====
-##Requirements
+## Requirements
 
 * [gridstack.js](https://github.com/troolee/gridstack.js#usage)
 * [@angular/core](https://www.npmjs.com/package/@angular/core)
 
-##Install
+## Install
 
 [![NPM version](https://img.shields.io/npm/v/ng2-gridstack.svg)](https://www.npmjs.com/package/ng2-gridstack)
 
 ```bash
 $ npm install ng2-gridstack
 ```
-##Basic Usage
+## Basic Usage
 
 Using SystemJs :
 
@@ -64,7 +64,7 @@ export class YourModule { }
 
 [ng2-gridstack](https://github.com/troolee/ng2-gridstack) can be used in two ways, either by letting the component add the items for you, or by building your own items.
 
-####First mode
+#### First mode
 ```html
 <gridStack w="12" animate="true" 
 	buttonClass="btn btn-default" 
@@ -77,7 +77,7 @@ export class YourModule { }
 	(deleteCardFunc)="deleteCard($event)">
 </gridStack>
 ```
-####Second mode
+#### Second mode
 ```html    
 <gridStack w="12" animate="true">
 	<div gridStackItem
@@ -87,7 +87,7 @@ export class YourModule { }
 </gridStack>
 ```
 
-###Inputs/Outputs
+### Inputs/Outputs
 * *w* : number of items that can fit in a row.
 * *animate* : grid animation on/off.
 * *options* (optional) : an associative array of gridstack [options](https://github.com/troolee/gridstack.js/tree/master/doc#options).
