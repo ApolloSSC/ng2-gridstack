@@ -130,7 +130,6 @@ __decorate([
 ], GridStackComponent.prototype, "items", void 0);
 GridStackComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'gridStack',
         templateUrl: 'gridstack.component.html'
     }),
