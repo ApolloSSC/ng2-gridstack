@@ -2,10 +2,28 @@
 declare var $: any; // JQuery
 declare var _: any; // lodash
 
+require('./gridstack.component.html')
 
 @Component({
     selector: 'gridStack',
-    templateUrl: 'gridstack.component.html'
+    template: `<div>
+    < button * ngIf="addFunction"(click)="addItem()" class='{{buttonClass}}' > Ajouter une carte< /button>
+    < button * ngIf="saveFunction"(click)="savePanel()" class='btn-gridstack-save {{buttonClass}}' > Enregistrer le panneau< /button>
+    < button * ngIf="deleteFunction"(click)="deletePanel()" class='btn-gridstack-del {{buttonClass}}' > Supprimer le panneau< /button>
+    < span class="card-management" hidden>
+    <button *ngIf="deleteCardFunc"(click)="deleteCard()"  class='btn-gridstack-del-card {{buttonClass}}' > Supprimer la carte< /button>
+    < /span>
+    < /div>
+    < br />
+    <div class="grid-stack" [attr.data - gs - width] = "w"[attr.data - gs - animate] = "animate" >
+    <ng-content > </ng-content>
+    < div gridStackItem
+            spellcheck= "false"
+    * ngFor="let item of items"
+            [x] = "item.X"[y] = "item.Y"[h] = "item.Height"[w] = "item.Width"[customid] = "item.CardId"[content] = "item.Content"
+        (dblclick) = "onItemClick()" >
+        </div>
+    </div>`
 })
 
 export class GridStackComponent{
