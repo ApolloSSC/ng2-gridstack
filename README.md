@@ -75,10 +75,10 @@ export class YourModule { }
 	(saveFunction)="save($event)" 
 	(deleteFunction)="deletePanel()" 
 	(deleteCardFunc)="deleteCard($event)"
-    [addButtonText]="'Add card'"
-    [saveButtonText]="'Save panel'"
-    [deleteButtonText]="'Delete panel'"
-    [deleteCardButtonText]="'Delete card'">
+	[addButtonText]="'Add card'"
+	[saveButtonText]="'Save panel'"
+	[deleteButtonText]="'Delete panel'"
+	[deleteCardButtonText]="'Delete card'">
 </gridStack>
 ```
 #### Second mode
