@@ -5,11 +5,11 @@ declare var _: any; // lodash
 @Component({
     selector: 'gridStack',
     template: `<div>
-    <button *ngIf="addFunction" (click)="addItem()" class='{{buttonClass}}'> Ajouter une carte</button>
-    <button *ngIf="saveFunction" (click)="savePanel()" class='btn-gridstack-save {{buttonClass}}'> Enregistrer le panneau</button>
-    <button *ngIf="deleteFunction" (click)="deletePanel()" class='btn-gridstack-del {{buttonClass}}'> Supprimer le panneau</button>
+    <button *ngIf="addButtonText && addButtonText != ''" (click)="addItem()" class='{{buttonClass}}'>{{addButtonText}}</button>
+    <button *ngIf="saveButtonText && saveButtonText != ''" (click)="savePanel()" class='btn-gridstack-save {{buttonClass}}'>{{saveButtonText}}</button>
+    <button *ngIf="deleteButtonText && deleteButtonText != ''" (click)="deletePanel()" class='btn-gridstack-del {{buttonClass}}'>{{deleteButtonText}}</button>
     <span class="card-management" hidden>
-    <button *ngIf="deleteCardFunc" (click)="deleteCard()"  class='btn-gridstack-del-card {{buttonClass}}'> Supprimer la carte</button>
+    <button *ngIf="deleteCardButtonText && deleteCardButtonText != ''" (click)="deleteCard()"  class='btn-gridstack-del-card {{buttonClass}}'>{{deleteCardButtonText}}</button>
     </span>
     </div>
     <br/>
@@ -30,6 +30,12 @@ export class GridStackComponent{
     @Input() buttonClass: string = "";
     @Input() allowEditing: boolean = false;
     @Input() options: any[];
+
+    @Input() addButtonText: string;
+    @Input() saveButtonText: string;
+    @Input() deleteButtonText: string;
+    @Input() deleteCardButtonText: string;
+
     @Output() addFunction = new EventEmitter<boolean>();
     @Output() saveFunction = new EventEmitter<any>();
     @Output() deleteFunction = new EventEmitter<boolean>();

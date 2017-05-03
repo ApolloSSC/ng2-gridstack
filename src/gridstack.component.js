@@ -109,6 +109,22 @@ __decorate([
     __metadata("design:type", Array)
 ], GridStackComponent.prototype, "options", void 0);
 __decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], GridStackComponent.prototype, "addButtonText", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], GridStackComponent.prototype, "saveButtonText", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], GridStackComponent.prototype, "deleteButtonText", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], GridStackComponent.prototype, "deleteCardButtonText", void 0);
+__decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], GridStackComponent.prototype, "addFunction", void 0);
@@ -131,7 +147,7 @@ __decorate([
 GridStackComponent = __decorate([
     core_1.Component({
         selector: 'gridStack',
-        template: "<div>\n    <button *ngIf=\"addFunction\" (click)=\"addItem()\" class='{{buttonClass}}'> Ajouter une carte</button>\n    <button *ngIf=\"saveFunction\" (click)=\"savePanel()\" class='btn-gridstack-save {{buttonClass}}'> Enregistrer le panneau</button>\n    <button *ngIf=\"deleteFunction\" (click)=\"deletePanel()\" class='btn-gridstack-del {{buttonClass}}'> Supprimer le panneau</button>\n    <span class=\"card-management\" hidden>\n    <button *ngIf=\"deleteCardFunc\" (click)=\"deleteCard()\"  class='btn-gridstack-del-card {{buttonClass}}'> Supprimer la carte</button>\n    </span>\n    </div>\n    <br/>\n    <div class=\"grid-stack\" [attr.data-gs-width]=\"w\" [attr.data-gs-animate]=\"animate\">\n    <ng-content > </ng-content>\n    <div gridStackItem\n            spellcheck=\"false\"\n            *ngFor=\"let item of items\"\n            [x]=\"item.X\" [y]=\"item.Y\" [h]=\"item.Height\" [w]=\"item.Width\" [customid]=\"item.CardId\" [content]=\"item.Content\"\n        (dblclick)=\"onItemClick()\">\n    </div>"
+        template: "<div>\n    <button *ngIf=\"addButtonText && addButtonText != ''\" (click)=\"addItem()\" class='{{buttonClass}}'>{{addButtonText}}</button>\n    <button *ngIf=\"saveButtonText && saveButtonText != ''\" (click)=\"savePanel()\" class='btn-gridstack-save {{buttonClass}}'>{{saveButtonText}}</button>\n    <button *ngIf=\"deleteButtonText && deleteButtonText != ''\" (click)=\"deletePanel()\" class='btn-gridstack-del {{buttonClass}}'>{{deleteButtonText}}</button>\n    <span class=\"card-management\" hidden>\n    <button *ngIf=\"deleteCardButtonText && deleteCardButtonText != ''\" (click)=\"deleteCard()\"  class='btn-gridstack-del-card {{buttonClass}}'>{{deleteCardButtonText}}</button>\n    </span>\n    </div>\n    <br/>\n    <div class=\"grid-stack\" [attr.data-gs-width]=\"w\" [attr.data-gs-animate]=\"animate\">\n    <ng-content > </ng-content>\n    <div gridStackItem\n            spellcheck=\"false\"\n            *ngFor=\"let item of items\"\n            [x]=\"item.X\" [y]=\"item.Y\" [h]=\"item.Height\" [w]=\"item.Width\" [customid]=\"item.CardId\" [content]=\"item.Content\"\n        (dblclick)=\"onItemClick()\">\n    </div>"
     }),
     __metadata("design:paramtypes", [core_1.ElementRef,
         core_1.Renderer])

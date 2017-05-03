@@ -74,7 +74,11 @@ export class YourModule { }
 	(addFunction)="addCard()" 
 	(saveFunction)="save($event)" 
 	(deleteFunction)="deletePanel()" 
-	(deleteCardFunc)="deleteCard($event)">
+	(deleteCardFunc)="deleteCard($event)"
+    [addButtonText]="'Add card'"
+    [saveButtonText]="'Save panel'"
+    [deleteButtonText]="'Delete panel'"
+    [deleteCardButtonText]="'Delete card'">
 </gridStack>
 ```
 #### Second mode
@@ -99,7 +103,12 @@ export class YourModule { }
 	* *height*
 	* *customid*
 	* *content* (optional)
-The following are parameters that, if set, will display a button to call the specified function.
+
+* *addButtonText* (optional) : If present, will display a button that triggers addFunction.
+* *saveButtonText* (optional) : If present, will display a button that triggers saveFunction.
+* *deleteButtonText* (optional) : If present, will display a button that triggers deleteFunction.
+* *deleteCardButtonText* (optional) : If present, will display a button that triggers deleteCardFunc.
+
 * *addFunction* (optional) : this function should add a new item to the array passed in the *items* parameter.
 * *saveFunction* (optional) : calls the specified function with the updated array of items as parameter, so that you can save it.
 * *deleteFunction* (optional) : function to call when deleting the whole panel.
