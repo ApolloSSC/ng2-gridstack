@@ -2,7 +2,7 @@
   "name": "ng2-gridstack",
   "version": "0.2.1",
   "description": "A gridstack component for Angular2",
-  "main": "index.js",
+  "main": "ng2-gridstack.js",
   "scripts": {
     "prepublish": "tsc"
   },
