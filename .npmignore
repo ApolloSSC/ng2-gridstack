@@ -1,6 +1,9 @@
 # Node generated files
 node_modules
+./src
+tsconfig.json
 npm-debug.log
+rollup*
 # OS generated files
 Thumbs.db
 .DS_Store

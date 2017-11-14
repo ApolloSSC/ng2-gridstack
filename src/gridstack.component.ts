@@ -1,10 +1,12 @@
 ﻿import { Component, EventEmitter, OnInit, Input, Output, ElementRef, Renderer } from '@angular/core';
-declare var $: any; // JQuery
+//declare var $: any; // JQuery
+const $ = require('jquery')
 declare var _: any; // lodash
 
 @Component({
     selector: 'gridStack',
-    template: `<div>
+    template: `
+    <div>
     <button *ngIf="addButtonText && addButtonText != ''" (click)="addItem()" class='{{buttonClass}}'>{{addButtonText}}</button>
     <button *ngIf="saveButtonText && saveButtonText != ''" (click)="savePanel()" class='btn-gridstack-save {{buttonClass}}'>{{saveButtonText}}</button>
     <button *ngIf="deleteButtonText && deleteButtonText != ''" (click)="deletePanel()" class='btn-gridstack-del {{buttonClass}}'>{{deleteButtonText}}</button>
@@ -19,7 +21,7 @@ declare var _: any; // lodash
             spellcheck="false"
             *ngFor="let item of items"
             [x]="item.X" [y]="item.Y" [h]="item.Height" [w]="item.Width" [customid]="item.CardId" [content]="item.Content"
-        (dblclick)="onItemClick()">
+        (dblclick)="onItemClick($event)">
     </div>`
 })
 
@@ -51,11 +53,11 @@ export class GridStackComponent{
     ngAfterViewInit() {
         let nativeElement = this.el.nativeElement; 
 
-        $(nativeElement).find(".grid-stack").gridstack(this.options);
+        (<any>$(nativeElement).find(".grid-stack")).gridstack(this.options);
 
     }
 
-    onItemClick()
+    onItemClick(event: any)
     {
         var grid = $('.grid-stack').data('gridstack');
         var element = $(event.target);
@@ -96,7 +98,8 @@ export class GridStackComponent{
     deleteCard() {
         var selected = $(this.el.nativeElement).find(".selected-item").parent();
         if (this.deleteCardFunc) {
-            this.deleteCardFunc.emit(selected.attr("data-custom-id"));
+            let id: number = parseInt(<string>selected.attr("data-custom-id"));
+            this.deleteCardFunc.emit(id);
             $('.grid-stack').data('gridstack').removeWidget(selected);
             $(".grid-stack-item-content").removeClass("selected-item");
             $(".card-management").hide();
@@ -106,7 +109,7 @@ export class GridStackComponent{
     savePanel() {
         if (this.saveFunction) {
             //Get cards from view
-            var jsonItems = _.map($('.grid-stack .grid-stack-item:visible'), function (el) {
+            var jsonItems = _.map($('.grid-stack .grid-stack-item:visible'), function (el: any) {
                 el = $(el);
                 var node = el.data('_gridstack_node');
                 return {

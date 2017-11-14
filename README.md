@@ -1,54 +1,33 @@
 ng2-gridstack
 =============
 
-A gridstack component for Angular2. Based on [gridstack.js](https://github.com/troolee/gridstack.js).
+A gridstack component for Angular2+. Based on [gridstack.js](https://github.com/troolee/gridstack.js) 0.3.0.
 
 Usage
 =====
 ## Requirements
 
 * [gridstack.js](https://github.com/troolee/gridstack.js#usage)
-* [@angular/core](https://www.npmjs.com/package/@angular/core)
 
 ## Install
 
 [![NPM version](https://img.shields.io/npm/v/ng2-gridstack.svg)](https://www.npmjs.com/package/ng2-gridstack)
 
 ```bash
-$ npm install ng2-gridstack
+$ npm install ng2-gridstack --save
 ```
 ## Basic Usage
 
-Using SystemJs :
-
-```js
-System.config({
-    paths: {
-        (...)
-    },
-    map: {
-        'ng2-gridstack': 'npm:ng2-gridstack',
-		(...)
-    },
-    packages: {
-        app: {
-        'ng2-gridstack': {
-            main: './ng2-gridstack.js',
-            defaultExtension: 'js'
-        },
-		(...)
-    }
-```
-
-Import the component in your module
+Import the module...
 
 ```ts
-import { GridStackComponent, GridStackItemDirective } from 'ng2-gridstack'
+import { GridStackModule } from 'ng2-gridstack'
 (...)
 
 @NgModule({
     imports: [
         (...)
+        GridStackModule,
     ],
     declarations: [
         GridStackComponent,
@@ -60,6 +39,12 @@ import { GridStackComponent, GridStackItemDirective } from 'ng2-gridstack'
     ]
 })
 export class YourModule { }
+```
+
+and load gridstack's css. Example using the global css file from AngularCLI
+```css
+/* You can add global styles to this file, and also import other style files */
+@import "~gridstack/dist/gridstack.min.css";
 ```
 
 [ng2-gridstack](https://github.com/troolee/ng2-gridstack) can be used in two ways, either by letting the component add the items for you, or by building your own items.

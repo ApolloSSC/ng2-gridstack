@@ -1,27 +1,42 @@
 {
   "name": "ng2-gridstack",
-  "version": "0.2.1",
-  "description": "A gridstack component for Angular2",
-  "main": "ng2-gridstack.js",
+  "private": false,
+  "version": "1.0.0",
+  "description": "A gridstack component for Angular2+",
+  "main": "dist/bundles/ng2-gridstack.umd.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "tsc"
+    "transpile": "rimraf dist && ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/bundles/ng2-gridstack.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ng2-gridstack.umd.min.js",
+    "build": "npm run transpile && npm run package && npm run minify"
   },
   "author": "Guillaume Perouffe <g.perouffe@gmail.com>",
-  "url":  "https://github.com/ApolloSSC/ng2-gridstack",
+  "repository": "https://github.com/ApolloSSC/ng2-gridstack",
   "license": "ISC",
   "dependencies": {
-    "@angular/core": "^2.4.7",
-    "gridstack": "^0.2.6"
+    "gridstack": "0.3.0"
   },
   "devDependencies": {
-    "@types/node": "^7.0.5",
-    "rxjs": "^5.1.1",
-    "zone.js": "^0.7.7",
-    "@types/core-js": "^0.9.35",
-    "gulp": "^3.9.1",
-    "typescript": "^2.1.6",
-    "gulp-typescript": "^3.1.4"
+    "@angular/common": "^2.4.10",
+    "@angular/compiler": "^2.4.10",
+    "@angular/compiler-cli": "^2.4.10",
+    "@angular/core": "^2.4.10",
+    "@types/core-js": "^0.9.43",
+    "@types/jquery": "^3.2.16",
+    "@types/node": "^8.0.51",
+    "core-js": "^2.5.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.51.5",
+    "rxjs": "^5.5.2",
+    "typescript": "^2.4.2",
+    "uglify-js": "^3.1.9",
+    "zone.js": "^0.8.18"
   },
-  "typings": "./ng2-gridstack.d.ts"
-
+  "peerDependencies": {
+    "@angular/core": "^2.4.0",
+    "@angular/common": "^2.4.0",
+    "rxjs": "^5.0.1"
+  }
 }

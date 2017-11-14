@@ -1,5 +1,7 @@
 # Node generated files
+bundle
 node_modules
+dist
 npm-debug.log
 # OS generated files
 Thumbs.db
