@@ -42,6 +42,8 @@ export class GridStackComponent{
     @Output() saveFunction = new EventEmitter<any>();
     @Output() deleteFunction = new EventEmitter<boolean>();
     @Output() deleteCardFunc = new EventEmitter<number>();
+    @Output() changeFunction = new EventEmitter<any>();
+
     @Input() items: any[];
     private isStart = true;
     private editing = false;
@@ -55,6 +57,17 @@ export class GridStackComponent{
 
         (<any>$(nativeElement).find(".grid-stack")).gridstack(this.options);
 
+        if (this.changeFunction) {
+            _.delay(() => {
+                (<any>$(nativeElement).find(".grid-stack")).on('change', (event: any, item: any) => {
+                    this.changeFunction.emit({event: event, item: item})
+                });
+            }, 5000);
+        }
+    }
+
+    onChange() {
+        this.changeFunction.emit();            
     }
 
     onItemClick(event: any)
