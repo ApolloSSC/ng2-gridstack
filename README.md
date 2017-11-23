@@ -1,4 +1,4 @@
-ng2-gridstack
+ng5-gridstack
 =============
 
 A gridstack component for Angular2+. Based on [gridstack.js](https://github.com/troolee/gridstack.js) 0.3.0.
@@ -11,17 +11,17 @@ Usage
 
 ## Install
 
-[![NPM version](https://img.shields.io/npm/v/ng2-gridstack.svg)](https://www.npmjs.com/package/ng2-gridstack)
+[![NPM version](https://img.shields.io/npm/v/ng5-gridstack.svg)](https://www.npmjs.com/package/ng5-gridstack)
 
 ```bash
-$ npm install ng2-gridstack --save
+$ npm install ng5-gridstack --save
 ```
 ## Basic Usage
 
 Import the module...
 
 ```ts
-import { GridStackModule } from 'ng2-gridstack'
+import { GridStackModule } from 'ng5-gridstack'
 (...)
 
 @NgModule({
@@ -47,9 +47,10 @@ and load gridstack's css. Example using the global css file from AngularCLI
 @import "~gridstack/dist/gridstack.min.css";
 ```
 
-[ng2-gridstack](https://github.com/troolee/ng2-gridstack) can be used in two ways, either by letting the component add the items for you, or by building your own items.
+[ng5-gridstack](https://github.com/troolee/ng5-gridstack) can be used in two ways, either by letting the component add the items for you, or by building your own items.
 
 #### First mode
+Note that this method is currently not working.
 ```html
 <gridStack w="12" animate="true" 
 	buttonClass="btn btn-default" 
@@ -71,7 +72,9 @@ and load gridstack's css. Example using the global css file from AngularCLI
 <gridStack w="12" animate="true">
 	<div gridStackItem
 		[x]="0" [y]="0" [h]="3" [w]="3" [customid]="10">
-		<h1>Hello</h1>
+		<div class="grid-stack-item-content">
+			<h1>Hello</h1>
+		</div>
 	</div>
 </gridStack>
 ```
