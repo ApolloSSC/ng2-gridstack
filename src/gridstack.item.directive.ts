@@ -33,7 +33,7 @@ export class GridStackItemDirective {
 
         let elementText: string = '<div class="grid-stack-item-content">' + (this.content ? this.content : nativeElement.innerHTML) + '</div>';
         // TODO: Find the Angular(tm) way to do this ...
-        nativeElement.innerHTML = elementText;
+        //nativeElement.innerHTML = elementText;
 
         renderer.setElementAttribute(nativeElement, "data-gs-x", String(this.x));
         renderer.setElementAttribute(nativeElement, "data-gs-y", String(this.y));

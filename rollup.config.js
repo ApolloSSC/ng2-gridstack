@@ -1,7 +1,7 @@
 export default {
     input: 'dist/index.js',
     output: {
-        file: 'dist/bundles/ng2-gridstack.umd.js',
+        file: 'dist/bundles/ng5-gridstack.umd.js',
         format: 'umd'
     },
     sourcemap: true,
